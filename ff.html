@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chizzy's Plantain Chips</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#FFF8E7;
+    color:#333;
+}
+
+/* HEADER */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 80px;
+    background:#C62828;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:#FFD700;
+    font-size:30px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    font-size:18px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#FFD700;
+}
+
+/* HERO SECTION */
+
+.hero{
+    height:90vh;
+    background:
+    linear-gradient(rgba(198,40,40,.65),rgba(198,40,40,.65)),
+    url("plantain.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    width:70%;
+    margin:auto;
+    line-height:1.8;
+}
+
+.hero button{
+    margin-top:35px;
+    padding:15px 40px;
+    border:none;
+    border-radius:30px;
+    background:#FFD700;
+    color:#C62828;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.hero button:hover{
+    background:white;
+    transform:translateY(-5px);
+}
+
+/* ABOUT */
+
+.about{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    padding:80px;
+    flex-wrap:wrap;
+}
+
+.about img{
+    width:45%;
+    border-radius:20px;
+}
+
+.about-text{
+    width:50%;
+}
+
+.about-text h2{
+    color:#C62828;
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    line-height:1.8;
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.about-text button{
+    padding:14px 30px;
+    border:none;
+    border-radius:30px;
+    background:#C62828;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.about-text button:hover{
+    background:#FFD700;
+    color:#C62828;
+}
+
+/* FEATURES */
+
+.features{
+    padding:80px;
+    text-align:center;
+    background:#FFF3CD;
+}
+
+.features h2{
+    color:#C62828;
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:260px;
+    padding:30px;
+    border-radius:15px;
+    border-top:6px solid #FFD700;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#C62828;
+    margin-bottom:15px;
+}
+
+/* CALL TO ACTION */
+
+.cta{
+    background:#C62828;
+    color:white;
+    text-align:center;
+    padding:70px;
+}
+
+.cta h2{
+    font-size:40px;
+}
+
+.cta p{
+    width:70%;
+    margin:20px auto;
+    line-height:1.8;
+}
+
+.cta button{
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#FFD700;
+    color:#C62828;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.cta button:hover{
+    background:white;
+}
+
+/* FOOTER */
+
+footer{
+    background:#8B0000;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    padding:20px;
+}
+
+nav{
+    margin-top:15px;
+}
+
+.about{
+    flex-direction:column;
+    text-align:center;
+}
+
+.about img,
+.about-text{
+    width:100%;
+}
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero p{
+    width:90%;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🍌 CHIZZY'S PLANTAIN CHIPS</div>
+
+<nav>
+<a href="ff.html">Home</a>
+<a href="favour.html">About</a>
+<a href="rodiat.html">Products</a>
+<a href="sarah.html">Gallery</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div>
+
+<h1>Crispy, Fresh & Delicious</h1>
+
+<p>
+Enjoy the irresistible crunch of Chizzy's Plantain Chips. Made from carefully selected plantains to give you the perfect snack for every moment.
+</p>
+
+<button>Order Now</button>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<img src="about.jpg" alt="Plantain Chips">
+
+<div class="about-text">
+
+<h2>Welcome to Chizzy's Plantain Chips</h2>
+
+<p>
+At Chizzy's Plantain Chips, we are committed to producing premium-quality plantain chips that are crispy, fresh, and full of flavour. Every pack is made with care using quality ingredients and hygienic production methods to ensure you enjoy the perfect snack every time.
+</p>
+
+<button>Learn More</button>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<h2>Why Choose Us?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🌿 Fresh Plantains</h3>
+<p>Made from carefully selected fresh plantains.</p>
+</div>
+
+<div class="card">
+<h3>😋 Great Taste</h3>
+<p>Crispy, crunchy, and delicious in every bite.</p>
+</div>
+
+<div class="card">
+<h3>❤️ Hygienic Production</h3>
+<p>Prepared under clean and safe production standards.</p>
+</div>
+
+<div class="card">
+<h3>🚚 Fast Delivery</h3>
+<p>Quick and reliable delivery to your doorstep.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>Ready to Enjoy Every Crunch?</h2>
+
+<p>
+Place your order today and discover why everyone loves Chizzy's Plantain Chips.
+</p>
+
+<button>Shop Now</button>
+
+</section>
+
+<footer>
+
+<p>&copy; 2026 Chizzy's Plantain Chips. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>

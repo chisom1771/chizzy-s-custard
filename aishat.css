@@ -1,0 +1,24 @@
+button :hover{
+     background: #ffb300;
+}
+
+a,button{
+    text-decoration: none;
+    color: #5c3b00;
+    background: #feca5e;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.4s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: none;
+    cursor: pointer;
+}
+footer{
+    background-color: #5c3b00;
+    width: auto;
+    height: 100%;
+}
+#ife{
+    text-align: end;
+}

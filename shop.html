@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHIZZY'S CUSTARD</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<nav>
+<div class="logo">CHIZZY'S CUSTARD</div>
+
+<div class="nav-links">
+    <nav style=" text-align: center; gap: 10px; display: flex; align-items: end; justify-content:space-evenly;">
+
+            <a href="index.html" target="_blank" 
+           style="color: rgb(250, 249, 247); text-decoration: none; ">
+           HOME</a>
+           
+           <a href="aboutus.html" target="_blank" 
+            style="color: rgb(250, 249, 247); text-decoration: none;">
+            ABOUT US</a>
+            <a href="our services.html" target="_blank"
+            style="color: rgb(250, 249, 247); text-decoration: none; ">
+            OUR SERVICES</a>
+            <a href="shop.html" target="_blank"
+            style="color: rgb(250, 249, 247); text-decoration: none; ">
+            SHOP</a>
+          
+</div>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Premium Custard Collection</h1>
+<p>Delicious Vanilla, Chocolate and Strawberry Custard for Every Family.</p>
+</section>
+
+<h2 class="section-title">Featured Products</h2>
+
+<section class="products">
+
+<div class="product-card">
+<img src="izzy.png"
+onclick="openModal('izzy.png','3 In 1 Custard','₦2,500','500g premium family package. Rich, creamy and nutritious.')">
+
+<div class="product-info">
+<div class="badge">Family Pack</div>
+<h3>3 In 1 Custard</h3>
+<p>500g</p>
+<div class="price">2,500</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="vanilla.png"
+onclick="openModal('vanilla.png','Vanilla Custard','₦1,200','450g premium vanilla custard with rich flavour.')">
+
+<div class="product-info">
+<div class="badge">Best Seller</div>
+<h3>Vanilla Custard</h3>
+<p>450g</p>
+<div class="price">₦1,200</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="chocolate.png"
+onclick="openModal('chocolate.png','Chocolate Custard','₦1,200','450g chocolate custard with smooth cocoa taste.')">
+
+<div class="product-info">
+<div class="badge">Popular</div>
+<h3>Chocolate Custard</h3>
+<p>450g</p>
+<div class="price">₦1,200</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="strawberry.png"
+onclick="openModal('strawberry.png','Strawberry Custard','₦1,200','450g fruity strawberry flavoured custard.')">
+
+<div class="product-info">
+<div class="badge">New</div>
+<h3>Strawberry Custard</h3>
+<p>450g</p>
+<div class="price">₦1,200</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="val.png"
+onclick="openModal('val.png','Mini Vanilla Sachet','₦200','50g vanilla sachet pack.')">
+
+<div class="product-info">
+<h3>Mini Vanilla</h3>
+<p>50g</p>
+<div class="price">₦200</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="col.png"
+onclick="openModal('col.png','Mini Chocolate Sachet','₦200','50g chocolate sachet pack.')">
+
+<div class="product-info">
+<h3>Mini Chocolate</h3>
+<p>50g</p>
+<div class="price">₦200</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="straw.png"
+onclick="openModal('straw.png','Mini Strawberry Sachet','₦200','50g strawberry sachet pack.')">
+
+<div class="product-info">
+<h3>Mini Strawberry</h3>
+<p>50g</p>
+<div class="price">₦200</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
+<div class="product-card">
+<img src="4 in 1 sm.png"
+onclick="openModal('4 in 1 sm.png',' 4 1n 1 Container','₦2,500','450g 4 in 1 Container pack .')">
+
+<div class="product-info">
+<h3>meduim  4 in 1 pack</h3>
+<p>450g</p>
+<div class="price">₦2,500</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
+<div class="product-card">
+<img src="4 in 1 i.png"
+onclick="openModal('4 in 1 i.png',' 4 1n 1 sachet small','₦400','200g 4 in 1 sachet pack .')">
+
+<div class="product-info">
+<h3>small  sachet 4 in 1 pack</h3>
+<p>200g</p>
+<div class="price">₦400</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
+<div class="product-card">
+<img src="4 in 1 ii.png"
+onclick="openModal('4 in 1 ii.png',' 4 1n 1 sachet','₦700','400g 4 in 1 sachet pack .')">
+
+<div class="product-info">
+<h3>big sachet  4 in 1 pack</h3>
+<p>450g</p>
+<div class="price">₦700</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
+<div class="product-card">
+<img src="4 in 1 big.png"
+onclick="openModal('4 in 1 big.png',' 4 1n 1 Container','₦7,500','2.5kg 4 in 1 Container pack .')">
+
+<div class="product-info">
+<h3>big Container  4 in 1 pack</h3>
+<p>2.5kg</p>
+<div class="price">₦7,500</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
+
+
+
+</section>
+
+<div id="productModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="close               
+odal()">&times;</span>
+
+<img id="modalImg">
+
+<div class="modal-details">
+<h2 id="modalTitle"></h2>
+<h3 id="modalPrice" style="color:#d97706;"></h3>
+<br>
+<p id="modalDescription"></p>
+<br>
+<button class="buy-btn">Add To Cart</button>
+</div>
+
+</div>
+
+</div>
+    
+    <div class="form-container">
+
+        <div class="form-header">
+            <h1>CHIZZY'S CUSTARD</h1>
+            <h2>Place Your Order</h2>
+            <p>Where every spoon feels like home ❤️</p>
+        </div>
+
+        <form>
+
+            <div class="form-row">
+
+                <div class="input-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" placeholder="Enter your first name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" placeholder="Enter your last name" required>
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            </div>
+
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email address" required>
+            </div>
+
+
+            <div class="input-group">
+                <label for="address">Delivery Address</label>
+                <input type="text" id="address" placeholder="Enter your delivery address" required>
+            </div>
+
+
+            <div class="input-group">
+                <label for="flavours">Select Flavour</label>
+
+                <select id="flavours" name="flavours">
+                    <option value="">-- Choose a flavour --</option>
+                    <option value="Vanilla">Vanilla</option>
+                    <option value="Chocolate">Chocolate</option>
+                    <option value="3 in 1">3 in 1</option>
+                    <option value="Strawberry">Strawberry</option>
+                </select>
+            </div>
+
+
+            <div class="input-group">
+                <label>Package Type</label>
+
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="package" value="sachet">
+                        Sachet
+                    </label>
+
+                    <label>
+                        <input type="radio" name="package" value="container">
+                        Container
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="input-group">
+                <label for="quantity">Select Product & Quantity</label>
+
+                <select id="quantity" name="quantity">
+                    <option value="">-- Select a product --</option>
+                    <option>450g Chocolate Container</option>
+                    <option>450g Vanilla Container</option>
+                    <option>450g 3 in 1 Container</option>
+                    <option>450g Strawberry Container</option>
+                    <option>50g Chocolate Sachet</option>
+                    <option>50g Vanilla Sachet</option>
+                    <option>50g 3 in 1 Sachet</option>
+                    <option>50g Strawberry Sachet</option>
+                </select>
+            </div>
+
+
+            <div class="input-group">
+                <label for="feedback">Your Feedback</label>
+
+                <textarea id="feedback" name="feedback" rows="5"
+                    maxlength="100"
+                    placeholder="Enter your message or special request..."></textarea>
+
+                <small>Maximum 100 characters</small>
+            </div>
+
+             <div>
+            <button type="submit" onclick="alert('Thank You for ordering')">
+                ORDER NOW
+            </button>
+            </div>
+        
+<footer>
+<p>&copy; 2026 CHIZZY'S CUSTARD. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+function openModal(img,title,price,description){
+document.getElementById("productModal").style.display="flex";
+document.getElementById("modalImg").src=img;
+document.getElementById("modalTitle").innerHTML=title;
+document.getElementById("modalPrice").innerHTML=price;
+document.getElementById("modalDescription").innerHTML=description;
+}
+
+function closeModal(){
+document.getElementById("productModal").style.display="none";
+}
+
+window.onclick=function(event){
+let modal=document.getElementById("productModal");
+if(event.target===modal){
+modal.style.display="none";
+}
+}
+
+</script>
+
+</body>
+</html>
+```

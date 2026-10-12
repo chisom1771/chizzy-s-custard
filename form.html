@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <label for="fname">First name</label><br>
+        <input type="text" placeholder="username"><br><br><br>
+        <label for="lname">Last name</label><br>
+        <input type="text" placeholder="username"><br><br><br>
+        <label for="pnumbers">phone number</label><br>
+        <input type="numbers"><br><br>
+        <label for="email">Email</label><br>
+        <input type="email"><br><br>
+        <label for="Address"> Address</label><br>
+        <input type="text" placeholder="user's address"><br><br>
+        <label for="Flavours">Select Flavours</label><br><br>
+        <select id="flavours" name="flavours">
+            <option value="Vanilla">Vanilla</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="3 in 1">3 in 1</option>
+            <option value="Strawberry">Strawberry</option>
+        </select> <br><br>
+        <label for="ptype">Package type</label>
+        <input type="radio" name="Package">sachet<br>
+        <input type="radio" name="Package">container<br>
+        <label for="quantity">Quantity</label><br>
+        <input type="checkbox" id="quantities" name="custard" value="custard"><br>
+        <select>
+            <option> 450g Chocolate container</option>
+             <option> 450 Vanilla container</option>
+              <option>450g 3 in 1 container </option>
+               <option>450g Strawberry container</option>
+                <option>50g Chocolate sachet</option>
+                 <option> 50g Vanilla sachet</option>
+                  <option> 50g 3 in 1 sachet</option>
+                   <option> 50g Strawberry sachet</option>
+        </select><br>
+        <label for="feedback">Your Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="6" cols="30" maxlength="100"
+                placeholder="Enter up to 100 characters..."></textarea>
+    <div>
+        <button onclick="alert('Thank You')" style=>ORDER NOW</button>
+    </div>
+    <div>
+    <footer>
+        <p> &copy;2026 CHIZZY'S CUSTARD. All right reserved</p>
+    </footer>
+    </div>
+       
+        
+    </form>
+</body>
+</html>

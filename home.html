@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chizzy's Custard</title>
+  
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(to bottom, #fff8e7, #ffe0a3);
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header{
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1{
+            color: #5c3b00;
+            font-size: 38px;
+            letter-spacing: 2px;
+        }
+
+        nav{
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a{
+            text-decoration: none;
+            color: #5c3b00;
+            background: #feca5e;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.4s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        nav a:hover{
+            background: #ffb300;
+            transform: translateY(-3px);
+        }
+
+        /* HERO SECTION */
+        .hero{
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            overflow: hidden;
+        }
+
+        .hero img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%);
+        }
+
+        .hero-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            animation: fadeIn 2s ease;
+        }
+
+        .hero-text h2{
+            font-size: 65px;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-text p{
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .hero-text button{
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            background: #feca5e;
+            color: #5c3b00;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .hero-text button:hover{
+            background: #ffb300;
+            transform: scale(1.05);
+        }
+
+        /* ABOUT SECTION */
+        .about{
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .about h2{
+            font-size: 45px;
+            color: #5c3b00;
+            margin-bottom: 20px;
+        }
+
+        .about p{
+            font-size: 20px;
+            line-height: 1.8;
+            color: #4d3a12;
+        }
+
+        /* FLAVOURS */
+        .flavours{
+            padding: 70px 10%;
+            background: #fff3d4;
+        }
+
+        .flavours h2{
+            text-align: center;
+            font-size: 45px;
+            color: #5c3b00;
+            margin-bottom: 50px;
+        }
+
+        .cards{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card{
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: 0.4s;
+        }
+
+        .card:hover{
+            transform: translateY(-10px);
+        }
+
+        .card img{
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card h3{
+            padding: 20px;
+            color: #5c3b00;
+            font-size: 28px;
+        }
+
+        /* FOOTER */
+        footer{
+            background: #5c3b00;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            font-size: 18px;
+        }
+
+        /* ANIMATION */
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+            to{
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 768px){
+
+            header{
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-text h2{
+                font-size: 40px;
+            }
+
+            .hero-text p{
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>CHIZZY'S CUSTARD</h1>
+
+        <nav>
+            <a href="home.html" target="_parent">HOME</a>
+            <a href="About us.html" target="_self">ABOUT US</a>
+            <a href="our services.html" target="_self">OUR SERVICES</a>
+            <a href="shop.html" target="_self">SHOP</a>
+            <a href="form.html" target="_self">ORDER NOW</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="full.png" alt="Custard Image">
+
+        <div class="hero-text"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <!-- <h2>WHERE EVERY SPOON FEELS LIKE HOME</h2> -->
+            <p>Delicious • Creamy • Nutritious</p>
+
+            <button onclick="window.location.href='shop.html'" target="_self">Order Now</button>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <h2>Welcome To Chizzy's Custard</h2>
+
+        <p>
+            At Chizzy's Custard, we bring happiness to every table with rich,
+            creamy and tasty custard made for every family. Our delicious flavours
+            are carefully prepared to give you the perfect breakfast and dessert experience.
+            Every spoon is filled with love, sweetness and satisfaction.
+        </p>
+    </section>
+
+    <!-- FLAVOURS -->
+    <section class="flavours">
+        <h2>Our Flavours</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="vanilla.png" alt="">
+                <h3>Vanilla Flavour</h3>
+            </div>
+
+            <div class="card">
+                <img src="strawberry.png" alt="">
+                <h3>Strawberry Flavour</h3>
+            </div>
+
+            <div class="card">
+                <img src="chocolate.png" alt="">
+                <h3>Chocolate Flavour</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 CHIZZY'S CUSTARD | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
