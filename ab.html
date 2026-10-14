@@ -1,0 +1,919 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chizzy's Custard | Shop</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fffaf0;
+    color: #5c3b00;
+}
+
+header {
+    background: #92400e;
+    color: white;
+    padding: 20px 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #ffdc85;
+}
+
+.hero {
+    text-align: center;
+    background: linear-gradient(120deg, #92400e, #f59e0b);
+    color: white;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 32px;
+}
+
+.cart-bar {
+    background: #fff0cc;
+    padding: 15px 5%;
+    text-align: right;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+button {
+    cursor: pointer;
+    font: inherit;
+}
+
+#cartToggle {
+    background: #d97706;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 18px;
+    font-weight: bold;
+}
+
+.section-title {
+    text-align: center;
+    margin: 35px 0 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+    padding: 0 5% 35px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ead5ad;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px #00000010;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    padding: 12px;
+    background: #fff8e8;
+    cursor: pointer;
+}
+
+.product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-info h3 {
+    margin: 5px 0;
+}
+
+.product-info p {
+    margin: 5px 0 12px;
+}
+
+.price {
+    color: #92400e;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: auto;
+    padding: 10px 0;
+}
+
+.badge {
+    background: #ffedc2;
+    padding: 5px 8px;
+    border-radius: 15px;
+    align-self: flex-start;
+    font-size: 12px;
+}
+
+.buy-btn {
+    background: #d97706;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 11px;
+    font-weight: bold;
+}
+
+.buy-btn:hover,
+#cartToggle:hover {
+    background: #b45309;
+}
+
+.cart-panel {
+    width: 90%;
+    max-width: 750px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #d97706;
+    background: white;
+    border-radius: 10px;
+}
+
+.cart-panel[hidden] {
+    display: none;
+}
+
+.cart-item {
+    border-bottom: 1px solid #ead5ad;
+    padding: 12px 0;
+}
+
+.cart-item button {
+    border: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+.quantity-btn {
+    background: #ffedc2;
+}
+
+.remove-btn {
+    background: #dc2626;
+    color: white;
+}
+
+.cart-total {
+    text-align: right;
+    margin: 20px 0;
+}
+
+#checkoutBtn {
+    width: 100%;
+    padding: 13px;
+    background: #15803d;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.form-container {
+    width: 90%;
+    max-width: 750px;
+    margin: 35px auto;
+    padding: 25px;
+    background: white;
+    border: 1px solid #ead5ad;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-header h1 {
+    color: #92400e;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.input-group {
+    margin-bottom: 17px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d6c5a5;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: 2px solid #f5b94c;
+}
+
+.delivery-note {
+    background: #fff3cd;
+    color: #5c3b00;
+    border-left: 5px solid #d97706;
+    padding: 13px;
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+.order-total {
+    background: #fff8e8;
+    padding: 15px;
+    border-radius: 7px;
+    margin: 15px 0;
+}
+
+#orderSummary {
+    background: #fffdf8;
+}
+
+#orderNow {
+    width: 100%;
+    background: #15803d;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#orderNow:hover,
+#checkoutBtn:hover {
+    background: #166534;
+}
+
+#orderMessage {
+    font-weight: bold;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    text-align: center;
+    background: #92400e;
+    color: white;
+    padding: 20px;
+}
+
+/* Product image popup */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .form-row,
+    .modal-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">CHIZZY'S CUSTARD</div>
+
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="our services.html">OUR SERVICES</a>
+            <a href="shop.html">SHOP</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Premium Custard Collection</h1>
+    <p>Delicious Vanilla, Chocolate and Strawberry Custard for Every Family.</p>
+    <p>Where every spoon feels like home ❤️</p>
+</section>
+
+<!-- SHOPPING CART -->
+<div class="cart-bar">
+    <button type="button" id="cartToggle">
+        🛒 My Cart (<span id="cartCount">0</span>)
+    </button>
+</div>
+
+<section class="cart-panel" id="cartPanel" hidden>
+    <h2>My Shopping Cart</h2>
+
+    <div id="cartItems">
+        <p>Your cart is empty.</p>
+    </div>
+
+    <div class="cart-total">
+        <h3>Product Total: ₦<span id="cartTotal">0</span></h3>
+    </div>
+
+    <button type="button" id="checkoutBtn">
+        Continue to Order Form
+    </button>
+</section>
+
+<h2 class="section-title">Our Products</h2>
+
+<section class="products">
+
+    <div class="product-card">
+        <img src="izzy.png" alt="3 In 1 Custard"
+        data-title="3 In 1 Custard" data-price="2500"
+        data-description="500g premium family package.">
+        <div class="product-info">
+            <span class="badge">Family Pack</span>
+            <h3>3 In 1 Custard</h3>
+            <p>500g</p>
+            <div class="price">₦2,500</div>
+            <button type="button" class="buy-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="vanilla.png" alt="Vanilla Custard"
+        data-title="Vanilla Custard" data-price="1200"
+        data-description="450g rich vanilla custard.">
+        <div class="product-info">
+            <span class="badge">Best Seller</span>
+            <h3>Vanilla Custard</h3>
+            <p>450g</p>
+            <div class="price">₦1,200</div>
+            <button type="button" class="buy-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="chocolate.png" alt="Chocolate Custard"
+        data-title="Chocolate Custard" data-price="1200"
+        data-description="450g smooth chocolate custard.">
+        <div class="product-info">
+            <h3>Chocolate Custard</h3>
+            <p>450g</p>
+            <div class="price">₦1,200</div>
+            <button type="button" class="buy-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="strawberry.png" alt="Strawberry Custard"
+        data-title="Strawberry Custard" data-price="1200"
+        data-description="450g fruity strawberry custard.">
+        <div class="product-info">
+            <h3>Strawberry Custard</h3>
+            <p>450g</p>
+            <div class="price">₦1,200</div>
+            <button type="button" class="buy-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="val.png" alt="Mini Vanilla Sachet"
+        data-title="Mini Vanilla Sachet" data-price="200"
+        data-description="50g vanilla sachet.">
+        <div class="product-info">
+            <h3>Mini Vanilla</h3>
+            <p>50g</p>
+            <div class="price">₦200</div>
+            <button type="button" class="buy-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="col.png" alt="Mini Chocolate Sachet"
+        data-title="Mini Chocolate Sachet" data-price="200"
+        data-description="50g chocolate sachet.">
+        <div class="product-info">
+            <h3>Mini Chocolate</h3>
+            <p>50g</p>
+            <div class="price">₦200</div>
+            <button type="button" class="buy-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="straw.png" alt="Mini Strawberry Sachet"
+        data-title="Mini Strawberry Sachet" data-price="200"
+        data-description="50g strawberry sachet.">
+        <div class="product-info">
+            <h3>Mini Strawberry</h3>
+            <p>50g</p>
+            <div class="price">₦200</div>
+            <button type="button" class="buy-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="4 in 1 sm.png" alt="Medium 4 in 1 Container"
+        data-title="Medium 4 in 1 Container" data-price="2500"
+        data-description="450g 4 in 1 container pack.">
+        <div class="product-info">
+            <h3>Medium 4 in 1 Pack</h3>
+            <p>450g</p>
+            <div class="price">₦2,500</div>
+            <button type="button" class="buy-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="4 in 1 i.png" alt="Small 4 in 1 Sachet"
+        data-title="Small 4 in 1 Sachet" data-price="400"
+        data-description="200g 4 in 1 sachet pack.">
+        <div class="product-info">
+            <h3>Small 4 in 1 Sachet</h3>
+            <p>200g</p>
+            <div class="price">₦400</div>
+            <button type="button" class="buy-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="4 in 1 ii.png" alt="Big 4 in 1 Sachet"
+        data-title="Big 4 in 1 Sachet" data-price="700"
+        data-description="400g 4 in 1 sachet pack.">
+        <div class="product-info">
+            <h3>Big 4 in 1 Sachet</h3>
+            <p>400g</p>
+            <div class="price">₦700</div>
+            <button type="button" class="buy-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="4 in 1 big.png" alt="Big 4 in 1 Container"
+        data-title="Big 4 in 1 Container" data-price="7500"
+        data-description="2.5kg 4 in 1 container pack.">
+        <div class="product-info">
+            <h3>Big 4 in 1 Container</h3>
+            <p>2.5kg</p>
+            <div class="price">₦7,500</div>
+            <button type="button" class="buy-btn">Add To Cart</button>
+        </div>
+    </div>
+
+</section>
+
+<!-- PRODUCT IMAGE POPUP -->
+<div class="modal" id="productModal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <img id="modalImg" src="" alt="Custard product">
+
+        <div>
+            <h2 id="modalTitle"></h2>
+            <h3 id="modalPrice"></h3>
+            <p id="modalDescription"></p>
+            <button type="button" class="buy-btn" id="modalAddBtn">
+                Add To Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- CUSTOMER ORDER FORM -->
+<section class="form-container" id="orderFormSection">
+
+    <div class="form-header">
+        <h1>CHIZZY'S CUSTARD</h1>
+        <h2>Complete Your Order</h2>
+        <p>Where every spoon feels like home ❤️</p>
+    </div>
+
+    <form id="orderForm">
+
+        <div class="form-row">
+            <div class="input-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" required
+                placeholder="Enter your first name">
+            </div>
+
+            <div class="input-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" required
+                placeholder="Enter your last name">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required
+            placeholder="+2348000000000">
+        </div>
+
+        <div class="input-group">
+            <label for="email">Email Address (optional)</label>
+            <input type="email" id="email"
+            placeholder="Enter your email address">
+        </div>
+
+        <div class="input-group">
+            <label for="address">Full Delivery Address</label>
+            <textarea id="address" rows="3" required
+            placeholder="Enter your area, street and delivery address"></textarea>
+        </div>
+
+        <p class="delivery-note">
+            🚚 <strong>Delivery Fee:</strong>
+            Delivery charges depend on your location.
+            We will confirm your delivery fee after receiving your address.
+        </p>
+
+        <div class="input-group">
+            <label for="orderSummary">Your Selected Products</label>
+            <textarea id="orderSummary" rows="6" readonly required
+            placeholder="Add products to your cart first. Your order will appear here."></textarea>
+        </div>
+
+        <div class="order-total">
+            <strong>Product Total: ₦<span id="formTotal">0</span></strong>
+            <p>Delivery fee will be confirmed separately.</p>
+        </div>
+
+        <div class="input-group">
+            <label for="feedback">Special Request (optional)</label>
+            <textarea id="feedback" rows="3" maxlength="300"
+            placeholder="Any additional information?"></textarea>
+        </div>
+
+        <button type="submit" id="orderNow">
+            ORDER NOW — SEND VIA WHATSAPP
+        </button>
+
+        <p id="orderMessage" role="status"></p>
+
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2026 CHIZZY'S CUSTARD. All Rights Reserved.</p>
+    <p>Where every spoon feels like home ❤️</p>
+</footer>
+
+
+<script>
+const cart = [];
+let modalProduct = null;
+
+const modal = document.getElementById("productModal");
+
+const money = amount => Number(amount).toLocaleString("en-NG");
+
+// ADD PRODUCTS TO CART
+function addToCart(product) {
+    const existing = cart.find(item => item.title === product.title);
+
+    if (existing) {
+        existing.quantity++;
+    } else {
+        cart.push({
+            ...product,
+            quantity: 1
+        });
+    }
+
+    updateCart();
+
+    document.getElementById("cartPanel").hidden = false;
+}
+
+// UPDATE CART DISPLAY
+function updateCart() {
+    const cartItems = document.getElementById("cartItems");
+    cartItems.innerHTML = "";
+
+    let count = 0;
+    let total = 0;
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+    }
+
+    cart.forEach(item => {
+        count += item.quantity;
+        total += item.price * item.quantity;
+
+        const row = document.createElement("div");
+        row.className = "cart-item";
+
+        const name = document.createElement("p");
+        name.textContent = item.title;
+
+        const price = document.createElement("p");
+        price.textContent = "₦" + money(item.price) + " each";
+
+        const subtotal = document.createElement("p");
+        subtotal.textContent =
+            "Subtotal: ₦" + money(item.price * item.quantity);
+
+        // DECREASE QUANTITY
+        const minus = document.createElement("button");
+        minus.type = "button";
+        minus.className = "quantity-btn";
+        minus.textContent = "−";
+
+        minus.addEventListener("click", function () {
+            if (item.quantity > 1) {
+                item.quantity--;
+            } else {
+                const index = cart.indexOf(item);
+                if (index !== -1) cart.splice(index, 1);
+            }
+
+            updateCart();
+        });
+
+        // SHOW QUANTITY
+        const quantity = document.createElement("span");
+        quantity.textContent = " " + item.quantity + " ";
+
+        // INCREASE QUANTITY
+        const plus = document.createElement("button");
+        plus.type = "button";
+        plus.className = "quantity-btn";
+        plus.textContent = "+";
+
+        plus.addEventListener("click", function () {
+            item.quantity++;
+            updateCart();
+        });
+
+        // REMOVE PRODUCT
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.className = "remove-btn";
+        remove.textContent = "Remove";
+
+        remove.addEventListener("click", function () {
+            const index = cart.indexOf(item);
+            if (index !== -1) cart.splice(index, 1);
+            updateCart();
+        });
+
+        row.append(
+            name,
+            price,
+            subtotal,
+            minus,
+            quantity,
+            plus,
+            remove
+        );
+
+        cartItems.appendChild(row);
+    });
+
+    document.getElementById("cartCount").textContent = count;
+    document.getElementById("cartTotal").textContent = money(total);
+    document.getElementById("formTotal").textContent = money(total);
+
+    // UPDATE ORDER FORM
+    const summary = cart.map(item =>
+        item.title + " x " + item.quantity +
+        " = ₦" + money(item.price * item.quantity)
+    ).join("\n");
+
+    document.getElementById("orderSummary").value =
+        cart.length
+            ? summary + "\n\nProduct Total: ₦" + money(total)
+            : "";
+}
+
+// CONNECT EVERY PRODUCT'S ADD TO CART BUTTON
+document.querySelectorAll(".product-card").forEach(card => {
+    const img = card.querySelector("img");
+    const button = card.querySelector(".buy-btn");
+
+    function getProduct() {
+        return {
+            title: img.dataset.title,
+            price: Number(img.dataset.price),
+            img: img.getAttribute("src"),
+            description: img.dataset.description
+        };
+    }
+
+    button.addEventListener("click", function () {
+        addToCart(getProduct());
+    });
+
+    // OPEN PRODUCT IMAGE POPUP
+    img.addEventListener("click", function () {
+        modalProduct = getProduct();
+
+        document.getElementById("modalImg").src = modalProduct.img;
+        document.getElementById("modalTitle").textContent =
+            modalProduct.title;
+        document.getElementById("modalPrice").textContent =
+            "₦" + money(modalProduct.price);
+        document.getElementById("modalDescription").textContent =
+            modalProduct.description;
+
+        modal.style.display = "flex";
+    });
+});
+
+// ADD PRODUCT FROM POPUP
+document.getElementById("modalAddBtn").addEventListener("click", function () {
+    if (modalProduct) {
+        addToCart(modalProduct);
+        closeModal();
+    }
+});
+
+// CLOSE POPUP
+function closeModal() {
+    modal.style.display = "none";
+}
+
+document.getElementById("closeModal").addEventListener("click", closeModal);
+
+window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
+// OPEN AND CLOSE CART
+document.getElementById("cartToggle").addEventListener("click", function () {
+    const panel = document.getElementById("cartPanel");
+    panel.hidden = !panel.hidden;
+});
+
+// CONTINUE TO ORDER FORM
+document.getElementById("checkoutBtn").addEventListener("click", function () {
+    if (cart.length === 0) {
+        alert("Please add a product to your cart first.");
+        return;
+    }
+
+    document.getElementById("orderFormSection").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+
+// SEND ORDER TO WHATSAPP
+document.getElementById("orderForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (cart.length === 0) {
+        alert("Please add products to your cart before ordering.");
+        return;
+    }
+
+    const firstName = document.getElementById("fname").value.trim();
+    const lastName = document.getElementById("lname").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const feedback = document.getElementById("feedback").value.trim();
+
+    if (!firstName || !lastName || !phone || !address) {
+        alert("Please complete your name, phone number and delivery address.");
+        return;
+    }
+
+    const total = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+    );
+
+    let message = "NEW ORDER - CHIZZY'S CUSTARD\n\n";
+    message += "Customer: " + firstName + " " + lastName + "\n";
+    message += "Phone: " + phone + "\n";
+
+    if (email) {
+        message += "Email: " + email + "\n";
+    }
+
+    message += "Delivery Address: " + address + "\n\n";
+    message += "ORDER DETAILS:\n";
+
+    cart.forEach(item => {
+        message += item.title + " x " + item.quantity +
+            " = ₦" + money(item.price * item.quantity) + "\n";
+    });
+
+    message += "\nProduct Total: ₦" + money(total);
+    message += "\nDelivery Fee: To be confirmed based on location.";
+
+    if (feedback) {
+        message += "\nSpecial Request: " + feedback;
+    }
+
+    message += "\n\nPlease confirm my order. Thank you!";
+
+    const whatsappNumber = "2348147096301";
+
+    const whatsappURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(message);
+
+    document.getElementById("orderMessage").textContent =
+        "Opening WhatsApp. Please press Send to submit your order.";
+
+    window.open(whatsappURL, "_blank");
+});
+
+// INITIALISE CART
+updateCart();
+</script>
+
+
+</body>
+</html>
